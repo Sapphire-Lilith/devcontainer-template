@@ -1,0 +1,29 @@
+{
+    "name": "template",
+    "dockerComposeFile": [
+        "compose.yml"
+    ],
+    "initializeCommand": "/bin/bash .devcontainer/init.sh",
+    "service": "dev",
+    "workspaceFolder": "/workspace",
+    "mounts": [
+        {
+            "type": "bind",
+            "source": "..",
+            "target": "/workspace"
+        }
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "oderwat.indent-rainbow"
+            ],
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "editor.formatOnSave": true
+            }
+        }
+    },
+    "shutdownAction": "stopCompose",
+    "remoteUser": "dev"
+}
